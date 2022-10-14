@@ -15,9 +15,6 @@ jobs:
         json-file-path: 'items.json'
         github-token: ${{ secrets.GITHUB_TOKEN }}
         object-field-names: '[ "funder", "opportunity", "url", "date" ]'
-        file-to-use: 'opportunities.md'
-        html-cell1: '<td align="left">{{ funder }}</td>'
-        html-cell2: '<td>{{ opportunity }}</td>'
-        html-cell3: '<td>{{ url }}</td>'
-        html-cell4: '<td>{{ date }}</td>'
+        file-to-use: './opportunities.md'
+        html-cell: '<td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td>'
         
