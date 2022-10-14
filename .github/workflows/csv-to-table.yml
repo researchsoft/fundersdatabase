@@ -41,7 +41,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          global_template_repository: varunsridharan/varunsridharan
           commit_message: '📝 docs(items): funding opportunities update'
-          files: |
-            README.md=README.md
+          files: README.md
