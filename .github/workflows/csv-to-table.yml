@@ -37,9 +37,14 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
 
       - name: "💫 Update README.md"
-        uses: varunsridharan/action-dynamic-readme@main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+        uses: frdrwrt/write-to-file@v1.3
+        with: 
+          filepath: README.md
+          content: tempstuff 
+          mode: 0655
           commit_message: '📝 docs(items): funding opportunities update'
           files: README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          
