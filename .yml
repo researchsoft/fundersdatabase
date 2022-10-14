@@ -1,0 +1,2 @@
+- name: CSV to Markdown Table
+  uses: petems/csv-to-md-table-action@v1.0.0
