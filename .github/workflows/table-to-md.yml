@@ -6,7 +6,7 @@ on:
 jobs:
   table:
     runs-on: ubuntu-latest
-    name: Update README from json data
+    name: Update opportunities from json data
     steps:
     - uses: actions/checkout@v2
     - name: Read/Write data into opportunities
@@ -14,8 +14,7 @@ jobs:
       with:
         json-file-path: 'items.json'
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        columns: 3
         object-field-names: '[ "funder", "opportunity", "url", "date" ]'
         file-to-use: 'opportunities.md'
-        html-cell: '<tr><td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td></tr>'
+        html-cell: '<td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td>'
         
