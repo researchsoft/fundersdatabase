@@ -1,0 +1,31 @@
+on:
+  pull_request:
+    paths:
+      - '*.csv'
+
+jobs:
+  build:
+    name: Comment CSV as Pull-request Table
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@master
+      - name: Read CSV
+        id: csv
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./items.csv
+      - name: Convert to Markdown Table
+        uses: petems/csv-to-md-table-action@master
+        id: csv-table-output
+        with:
+          csvinput: ${{ steps.csv.outputs.content }}
+      - name: Add comment on Pull-request
+        uses: mshick/add-pr-comment@v1
+        with:
+          message: |
+            CSV changes detected:
+            ${{steps.csv-table-output.outputs.markdown-table}}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token-user-login: 'github-actions[bot]' # The user.login for temporary GitHub tokens
+          allow-repeats: true
