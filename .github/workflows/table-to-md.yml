@@ -10,11 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Read/Write data into opportunities
-      uses: eddiejaoude/github-actions-reader-writer@v0.1
       with:
+        file-to-use: 'README.md'
         json-file-path: 'items.json'
         github-token: ${{ secrets.GITHUB_TOKEN }}
         object-field-names: '[ "funder", "opportunity", "url", "date" ]'
-        file-to-use: 'README.md'
         html-cell: '<td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td>'
         
