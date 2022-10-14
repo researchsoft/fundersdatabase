@@ -40,10 +40,8 @@ jobs:
         uses: frdrwrt/write-to-file@v1.3
         with: 
           filepath: README.md
-          content: tempstuff 
+          content: csv-table-output 
           mode: 0655
-          commit_message: '📝 docs(items): funding opportunities update'
-          files: README.md
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
