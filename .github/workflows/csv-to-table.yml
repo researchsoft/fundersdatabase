@@ -37,12 +37,13 @@ jobs:
           echo 'EOF' >> $GITHUB_ENV
 
       - name: "💫 Update README.md"
-        uses: frdrwrt/write-to-file@v1.3
-        with: 
-          filepath: README.md
-          content: csv-table-output 
-          mode: 0655
+        uses: varunsridharan/action-dynamic-readme@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          global_template_repository: varunsridharan/varunsridharan
+          commit_message: '📝 docs(item): README update'
+          files: |
+            templates/README.md=README.md
 
           
