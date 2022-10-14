@@ -15,4 +15,4 @@ jobs:
         github-token: ${{ secrets.GITHUB_TOKEN }}
         file-to-use: 'opportunities.md'
         object-field-names: '[ "funder", "opportunity", "url", "date" ]'
-        html-cell: '<td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td>'
+        html-cell: '<td align="left">{{ funder }}{{ opportunity }}{{ url }}{{ date }}</td>'
