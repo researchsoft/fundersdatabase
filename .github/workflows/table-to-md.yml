@@ -10,14 +10,10 @@ jobs:
     - name: Read/Write data into opportunities
       uses: eddiejaoude/github-actions-reader-writer@v0.1
       with:
-        json-file-path: 'data.json'
+        json-file-path: 'items.json'
         github-token: ${{ secrets.GITHUB_TOKEN }}
         columns: 3
         object-field-names: '[ "funder", "opportunity", "url", "date" ]'
         file-to-use: 'opportunities.md'
-        html-cell: '<tr>
-                      <td align="left">{{ funder }}</td>
-                      <td>{{ opportunity }}</td>
-                      <td>{{ url }}</td>
-                      <td>{{ date }}</td>
-                    </tr>'
+        html-cell: '<tr><td align="left">{{ funder }}</td><td>{{ opportunity }}</td><td>{{ url }}</td><td>{{ date }}</td></tr>'
+        
