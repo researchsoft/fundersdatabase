@@ -24,7 +24,7 @@ jobs:
         with:
           path: ./items.csv
 
-      - name : "🧮 Converte CVS to Table"
+      - name : "🧮 Convert CVS to Table"
         id: csv-table-output
         uses: petems/csv-to-md-table-action@master
         with:
