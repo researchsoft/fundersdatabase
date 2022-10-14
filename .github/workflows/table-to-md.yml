@@ -12,7 +12,6 @@ jobs:
     - name: Read/Write data into opportunities
       uses: eddiejaoude/github-actions-reader-writer@v0.1
       with:
-        file-to-use: 'README.md'
         columns: 1
         json-file-path: 'items.json'
         github-token: ${{ secrets.GITHUB_TOKEN }}
