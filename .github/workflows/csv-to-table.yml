@@ -36,14 +36,14 @@ jobs:
           echo "${{steps.csv-table-output.outputs.markdown-table}}" >> $GITHUB_ENV
           echo 'EOF' >> $GITHUB_ENV
 
-      - name: "💫 Update README.md"
+      - name: "💫 Update opportunities.md"
         uses: varunsridharan/action-dynamic-readme@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           global_template_repository: varunsridharan/varunsridharan
-          commit_message: '📝 docs(item): README update'
+          commit_message: '📝 docs(item): Opportunities update'
           files: |
-            templates/README.md=README.md
+            templates/opportunities.md=opportunities.md
 
           
